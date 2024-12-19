@@ -80,3 +80,28 @@ Utility functions allowing the user to mimic keyboard key presses.
 #define MODIFIER_RSHIFT  (1 << 5)
 #define MODIFIER_RALT    (1 << 6)
 ```
+## Unsupported keys (lazy add)
+
+- All function keys (`fn`)
+- Arrow keys
+- Backspace (only `Del` available)
+- Capslock
+- Tilde key (`~`)
+
+## Example code: opening Chrome and typing in rickroll URL
+```c
+Keyboardinit();
+
+/* Open windows search and open Chrome */
+ModifiersAndKey(MODIFIER_OPTION, "s");
+HAL_Delay(100);
+TypeString("chrome");
+SingleKeypress("/enter");
+HAL_Delay(100);
+
+/* Type rickroll URL */
+TypeString("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+SingleKeypress("/enter");
+
+KeyboardDeinit();
+```
