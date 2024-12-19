@@ -273,6 +273,10 @@ void SingleKeypress(const char* key)
 		{
 			report_struct->KEYCODE1 = KEY_ENTER;
 		}
+		else if(strcmp(key, "/option") == 0)
+		{
+			report_struct->KEYCODE1 = KEY_ENTER;
+		}
 	}
 
 	else
